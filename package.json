@@ -1,0 +1,47 @@
+{
+  "name": "@ruman63/vue-typeahead",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./dist/vue-typeahead.common.js",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "build": "vue-cli-service build --target lib --name vue-typeahead ./src/components/index.js",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "vue": "^2.5.16"
+  },
+  "files": [
+    "dist/**",
+    "src/**",
+    "*.json"
+  ],
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.0.0-rc.4",
+    "@vue/cli-plugin-eslint": "^3.0.0-rc.4",
+    "@vue/cli-service": "^3.0.0-rc.4",
+    "@vue/eslint-config-prettier": "^3.0.0-rc.4",
+    "lint-staged": "^7.2.0",
+    "vue-template-compiler": "^2.5.16",
+    "vuepress": "^0.12.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "vue-cli-service lint",
+      "git add"
+    ],
+    "src/**/*.vue": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  }
+}
